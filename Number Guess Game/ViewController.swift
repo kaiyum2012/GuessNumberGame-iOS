@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        let p = Player(PlayerName: "Abdul")
+//        print(p.GetPlayerName())
+        
+//        for i in 1...3{
+            let testLevel = GameLevel(levelNo: 1, sliderValues: RangeValues(from: 1, to: 500), scope: 200)
+            print("Random \(testLevel.SetRandomNumber())")
+//        }
     }
 
 

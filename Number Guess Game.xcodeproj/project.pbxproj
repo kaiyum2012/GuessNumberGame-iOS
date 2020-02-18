@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FAB2E1F23FB49870049A630 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB2E1E23FB49870049A630 /* Player.swift */; };
+		3FAB2E2123FB4F7C0049A630 /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB2E2023FB4F7C0049A630 /* GameLevel.swift */; };
 		3FAD201D23FB432300A44244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD201C23FB432300A44244 /* AppDelegate.swift */; };
 		3FAD201F23FB432300A44244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD201E23FB432300A44244 /* SceneDelegate.swift */; };
 		3FAD202123FB432300A44244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD202023FB432300A44244 /* ViewController.swift */; };
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4ABB1223FC609D00A71044 /* BarboneCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BarboneCode.playground; sourceTree = "<group>"; };
+		3FAB2E1E23FB49870049A630 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		3FAB2E2023FB4F7C0049A630 /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		3FAD201923FB432300A44244 /* Number Guess Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Number Guess Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAD201C23FB432300A44244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FAD201E23FB432300A44244 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FAB2E1D23FB493C0049A630 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3F4ABB1223FC609D00A71044 /* BarboneCode.playground */,
+				3FAB2E1E23FB49870049A630 /* Player.swift */,
+				3FAB2E2023FB4F7C0049A630 /* GameLevel.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		3FAD201023FB432300A44244 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +114,7 @@
 		3FAD201B23FB432300A44244 /* Number Guess Game */ = {
 			isa = PBXGroup;
 			children = (
+				3FAB2E1D23FB493C0049A630 /* Source */,
 				3FAD201C23FB432300A44244 /* AppDelegate.swift */,
 				3FAD201E23FB432300A44244 /* SceneDelegate.swift */,
 				3FAD202023FB432300A44244 /* ViewController.swift */,
@@ -260,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FAD202123FB432300A44244 /* ViewController.swift in Sources */,
+				3FAB2E1F23FB49870049A630 /* Player.swift in Sources */,
+				3FAB2E2123FB4F7C0049A630 /* GameLevel.swift in Sources */,
 				3FAD201D23FB432300A44244 /* AppDelegate.swift in Sources */,
 				3FAD201F23FB432300A44244 /* SceneDelegate.swift in Sources */,
 			);
