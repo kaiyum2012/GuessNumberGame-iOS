@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct RangeValues{
-    var min : Int
-    var max : Int
-    var randomNumber : Int!
+struct RangeValues : RandomNumberGenerator{
+    private var min : Int
+    private var max : Int
+    private var randomNumber : Int!
     
     var range : ClosedRange<Int>
     
@@ -21,11 +21,18 @@ struct RangeValues{
         self.range = min...max
 //        default random number to mid value
         self.randomNumber = getMidNumber()
-        
     }
     
     func getMidNumber() -> Int {
         return Int((max - min) / 2)
+    }
+    
+    func getMin() -> Int {
+        return min
+    }
+    
+    func getMax() -> Int {
+        return max
     }
     
     func SetRandomNumber() -> Int {
@@ -70,11 +77,11 @@ class GameLevel {
     }
     
     func getMinValue() -> Int {
-        return valueRange.min
+        return valueRange.getMin()
     }
     
     func getMaxValue() -> Int {
-        return valueRange.max
+        return valueRange.getMax()
     }
     
     func SetRandomNumber() -> Int {
@@ -86,18 +93,32 @@ class GameLevel {
     }
     
     private func PrepareScoreRange(){
-        let offset = ((Float(scoreScopePerc)/200) * Float(valueRange.getRangeWidth()))
-        let lower = randomNumber - Int(offset)
-        let upper = randomNumber + Int(offset)
+        var offset = ((Float(scoreScopePerc)/(2*100)) * Float(valueRange.getRangeWidth()))
+        var lower = self.randomNumber! - Int(offset)
+        var upper = self.randomNumber! + Int(offset)
+      
+        if(scoreScopePerc == 100 ){
+            // Full range available to score
+            lower = getMinValue()
+            upper = getMaxValue()
+        }
+        else{
+            offset = ((Float(scoreScopePerc)/(2*100)) * Float(valueRange.getRangeWidth()))
+            lower = self.randomNumber! - Int(offset)
+            upper = self.randomNumber! + Int(offset)
+        }
+        
         print("Offset \(offset)")
+        print("rand \(self.randomNumber!)")
         print("Lower \(lower)")
         print("upper \(upper)")
-        print("------")
+        
         SetScoreRange(range: lower...upper)
     }
     private func SetScoreRange(range : ClosedRange<Int>) {
-        self.scoreRange.range = valueRange.range.clamped(to: range)
+        self.scoreRange.range = range.clamped(to : valueRange.range)
         print("score Range \(scoreRange.range)")
+        print("------")
     }
     
     func GetRandomNumber() -> Int {
@@ -110,9 +131,9 @@ class GameLevel {
         if(number == randomNumber!){
             score = 100
         }
-        else if(number < randomNumber){
+        else if(number < randomNumber!){
             
-        }else if (number > randomNumber){
+        }else if (number > randomNumber!){
             
         }
         
